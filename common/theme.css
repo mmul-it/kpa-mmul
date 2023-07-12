@@ -1,0 +1,92 @@
+/*
+ * @theme mmul
+ * @auto-scaling false
+ */
+
+@import 'gaia';
+
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
+
+* {
+  font-family: 'Mona Sans' !important;
+  font-weight: 500 900 !important;
+  font-stretch: 75% 125% !important;
+  font-style: bold !important;
+  color: #333333;
+}
+
+section::header {
+  font-style: bold !important;
+}
+
+header,
+footer {
+  position: absolute;
+  left: 50px;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+img {
+  background-color: transparent !important;
+}
+
+p,
+blockquote,section {
+  font-size: 28px;
+}
+
+section::after {
+  color: #333333;
+}
+
+code, .language-console, .language-yaml {
+  font-size: 14px;
+}
+
+.txt-title {
+  font-size: 74px;
+}
+
+.txt-tip {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.txt-white {
+  color: #fff;
+}
+
+.txt-yellow {
+  color: #dfdb48;
+}
+
+.coverlogo {                                                                      
+   display: grid;                                                               
+   grid-template-columns: 10% 90%;                                              
+   grid-gap: 10px;                                                              
+}                                                                               
+
+.coverlogo p {                                                                      
+   margin-top: 0px;
+   font-size: 74px;
+}
+                                                                                
+.threecols {                                                                    
+   display: grid;                                                               
+   grid-template-columns: 33% 33% 33%;                                          
+   grid-gap: 10px;                                                              
+}                                                                               
+                                                                                
+.fourcols {                                                                     
+   display: grid;                                                               
+   grid-template-columns: 25% 25% 25% 25%;                                      
+   grid-gap: 10px;                                                              
+}                               
