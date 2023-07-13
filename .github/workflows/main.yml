@@ -62,10 +62,17 @@ jobs:
         with:
           name: markdowns
           path: /kpa/output/
+      - name: Create symlink to projects
+        run: ln -sf /kpa/projects /__w/kpa-mmul/kpa-mmul/projects
       - name: Generate Marp pdf files
-        run: for DOC in $(ls /kpa/output/*.md); do
+        run: for DOC in $(ls /kpa/output/*.md | grep -v agenda); do
                echo "Processing ${DOC}";
                marp --theme /kpa/projects/${KPA_PROJECT}/common/theme.css --html --pdf --allow-local-files ${DOC};
+             done
+      - name: Generate Pandoc pdf agenda
+        run: for DOC in $(ls /kpa/output/*agenda.md); do
+               echo "Processing ${DOC}";
+               pandoc --template /kpa/projects/${KPA_PROJECT}/common/${KPA_PROJECT}.tex ${DOC} -o /kpa/output/$(basename $DOC .md).pdf;
              done
       - name: Upload Marp pdf files
         uses: actions/upload-artifact@v3
