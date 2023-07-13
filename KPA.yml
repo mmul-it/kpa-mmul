@@ -30,7 +30,8 @@ marp_slides:
     content: "{{ kpa_contents }}/Benefits_Limits_TODOs.md"
   - backcover: true
     title: "Thanks for listening!"
-    subtitle: |
+    subtitle: "End of presentation"
+    signature: |
       Let's keep in touch!
 
       **Raoul Scarazzini**
