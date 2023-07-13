@@ -1,16 +1,17 @@
 ---
 
-marp_title: "Knowledge **Pods** Approach"
-marp_subtitle: "Share knowlege in a standard, dynamic and open-souce way"
-
-marp_author: 'Raoul Scarazzini'
-marp_cover_logo: "{{ kpa_project_dir }}/images/kpa-logo-80-gray.svg"
-
 output_file: "output/KPA"
 pandoc_agenda_output_markdown: "{{ output_file }}.agenda.md"
 pandoc_agenda_output_pdf: "{{ output_file }}.agenda.pdf"
 marp_output_markdown: "{{ output_file }}.md"
 marp_output_pdf: "{{ output_file }}.pdf"
+
+marp_title: "Knowledge **Pods** Approach"
+marp_subtitle: "Share knowlege in a standard, dynamic and open-souce way"
+
+marp_author: 'Raoul Scarazzini'
+marp_copyright: '© 2023 MiaMammaUsaLinux.org'
+marp_cover_logo: "{{ kpa_project_dir }}/images/kpa-logo-80-gray.svg"
 
 kpa_contents: "{{ kpa_project_dir }}/contents"
 
@@ -21,6 +22,26 @@ marp_slides:
   - chapter: 'Basics'
     title: 'What is KPA?'
     content: "{{ kpa_contents }}/Basics.md"
-  - chapter: 'What are KPA limits?'
-    title: 'All that you can''t do with KPA'
-    content: "{{ kpa_contents }}/Limits.md"
+  - chapter: 'Practice'
+    title: 'Using KPA'
+    content: "{{ kpa_contents }}/Practice.md"
+  - chapter: 'KPA Benefits, limits and TODOs'
+    title: 'What you can, can''t and will do with KPA'
+    content: "{{ kpa_contents }}/Benefits_Limits_TODOs.md"
+  - backcover: true
+    title: "Thanks for listening!"
+    subtitle: |
+      Let's keep in touch!
+
+      **Raoul Scarazzini**
+      rasca@mmul.it | raoul.scarazzini@kiratech.it
+      https://www.miamammausalinux.org
+      https://www.linkedin.com/in/raoulscarazzini/
+      https://github.com/rascasoft
+
+      **KPA** and other stuff:
+      https://github.com/mmul-it
+      https://galaxy.ansible.com/mmul
+      https://quay.io/repository/mmul/
+
+      <span class='txt-tip'>This presentation was made using **KPA**!</span>

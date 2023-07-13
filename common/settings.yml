@@ -2,20 +2,16 @@
 
 kpa_project_dir: "projects/mmul"
 
+# Pandoc (agenda) section
 pandoc_agenda_template_file: "{{ kpa_project_dir }}/common/mmul.tex"
 pandoc_agenda_background_image: "{{ kpa_project_dir }}/images/schedule-background.png"
 
+# Marp (slides) section
 marp_theme: mmul
-marp_theme_file: "{{ kpa_project_dir }}/common/theme.css"
-marp_background_color: #ffffff
-marp_background_image: "{{ kpa_project_dir }}/images/slide-background.png"
-marp_copyright: '© 2023 MiaMammaUsaLinux.org'
 marp_paginate: true
-
+marp_theme_file: "{{ kpa_project_dir }}/common/theme.css"
+marp_background_image: "{{ kpa_project_dir }}/images/slide-background.png"
 marp_cover_template: "{{ kpa_project_dir }}/templates/cover.md.j2"
-marp_cover_image: "{{ kpa_project_dir }}/images/logo.png"
-marp_cover_logo: "{{ kpa_project_dir }}/images/logo.png"
 marp_cover_background_image: "{{ kpa_project_dir }}/images/cover-background.png"
-
 marp_chapter_template: "{{ kpa_project_dir }}/templates/chapter.md.j2"
 marp_chapter_background_image: "{{ kpa_project_dir }}/images/chapter-background.png"

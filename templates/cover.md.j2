@@ -2,6 +2,14 @@
 <!-- _header: '' -->
 <!-- _footer: '**{{ marp_author }}** | _{{ marp_copyright }}_' -->
 
+{% if slide.backcover is defined and slide.backcover | bool%}
+
+# {{ slide.title }}
+
+{{ slide.subtitle }}
+
+{% else %}
+
 <div class='coverlogo'>
 <div>
 
@@ -14,5 +22,7 @@
 </div></div>
 
 {{ marp_subtitle }}
+
+{% endif %}
 
 <!-- You can also write down presenter notes in HTML comments. -->

@@ -5,7 +5,9 @@
 
 @import 'gaia';
 
+@import url('https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/mona-sans');
+@import '~highlight.js/styles/github';
 
 * {
   font-family: 'Mona Sans' !important;
@@ -24,6 +26,7 @@ footer {
   position: absolute;
   left: 50px;
   font-size: 18px;
+  font-weight: bolder;
 }
 
 h1 {
@@ -45,10 +48,6 @@ blockquote,section {
 
 section::after {
   color: #333333;
-}
-
-code, .language-console, .language-yaml {
-  font-size: 14px;
 }
 
 .txt-title {
@@ -90,3 +89,15 @@ code, .language-console, .language-yaml {
    grid-template-columns: 25% 25% 25% 25%;                                      
    grid-gap: 10px;                                                              
 }                               
+
+pre {
+  background: #ebebeb;
+}
+
+code, .language-console, .language-yaml {
+  font-family: 'Roboto mono';
+  font-size: 16px;
+  font-weight: bolder;
+  color: #333333;
+  background: #ebebeb;
+}
