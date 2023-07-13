@@ -59,7 +59,7 @@ live.
 Every **KPA** issue is tracked in the [KPA GitHub Page](https://github.com/mmul-it/kpa/issues), so you can suggest and propose
 there improvements.
 
-There are at least two main issues that will be addressed sooner than later: 
+There are at least two main issues that will be addressed sooner than later:
 
 - **The size of the KPA container** that today is big and by adding more layers
   could be sensively reduced.

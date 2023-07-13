@@ -11,7 +11,7 @@ no need to rely on proprietary tools and formats to create contents.
 
 ---
 
-## What is a **KPA project**?
+## What is a **KPA project**
 
 A **KPA project** is a set of markdown files and variables in a yaml format that
 are used by the Ansible role named [kpa_generator](https://github.com/mmul-it/kpa_generator) to automate the creation
@@ -24,7 +24,7 @@ include into the training, by creating sequences of **Knowledge Pods** (**KP**).
 
 ---
 
-## What is a **Knowledge Pod**?
+## What is a **Knowledge Pod**
 
 Just as a _Kubernetes_ Pod is the _smallest execution unit_ in Kubernetes, a
 **KP** is the _smallest knowledge unit_ in which you can cover a topic.
@@ -38,11 +38,11 @@ cannot be split into sub topic. If you need to deliver a training named
 - Installation.md
 - Day-0-operations.md
 
-#*KPA** then takes care to combine everything in a standard and replicable doc.
+**KPA** then takes care to combine everything in a standard and replicable doc.
 
 ---
 
-## So, what is **KPA** in the end?
+## What is **KPA** in the end
 
 **KPA** is at the same time:
 
