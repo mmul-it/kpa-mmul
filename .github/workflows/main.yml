@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: quay.io/mmul/kpa
+      options: --user root
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -24,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: quay.io/mmul/kpa
+      options: --user root
     needs: lint
     steps:
       - name: Checkout repository
@@ -48,6 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: quay.io/mmul/kpa
+      options: --user root
     needs: markdown
     steps:
       - name: Checkout repository
