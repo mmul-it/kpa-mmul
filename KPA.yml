@@ -1,7 +1,7 @@
 ---
 
 marp_title: "Knowledge **Pods** Approach"
-marp_subtitle: "Train and share knowlege in a standard, dynamic and open-souce way"
+marp_subtitle: "Share knowlege in a standard, dynamic and open-souce way"
 
 marp_author: 'Raoul Scarazzini'
 marp_cover_logo: "{{ kpa_project_dir }}/images/kpa-logo-80-gray.svg"

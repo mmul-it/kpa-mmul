@@ -1,0 +1,71 @@
+name: Create PDFs for mmul project
+
+env:
+  KPA_PROJECT: mmul
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/mmul/kpa
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Create symlink to workspace
+        run: ln -sf /__w/kpa-mmul/kpa-mmul /kpa/projects/${KPA_PROJECT}
+      - name: Check project yamls
+        run: yamllint -s /kpa/projects/${KPA_PROJECT}/*.yml
+      - name: Check markdown files for example project
+        run: mdl /kpa/projects/${KPA_PROJECT}/contents/*.md
+
+  markdown:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/mmul/kpa
+    needs: lint
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Create symlink to workspace
+        run: ln -sf /__w/kpa-mmul/kpa-mmul /kpa/projects/${KPA_PROJECT}
+      - name: Generate markdown files
+        run: for DOC in $(ls /kpa/projects/${KPA_PROJECT}/*.yml); do
+               echo "Processing ${DOC}";
+               ansible-playbook
+                 -e @/kpa/projects/${KPA_PROJECT}/common/settings.yml
+                 -e @${DOC}
+                 /kpa/playbooks/kpa_generator.yml;
+             done
+      - name: Upload markdown files
+        uses: actions/upload-artifact@v3
+        with:
+          name: markdowns
+          path: /kpa/output/**.md
+
+  marp-pdf:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/mmul/kpa
+    needs: markdown
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Create symlink to workspace
+        run: ln -sf /__w/kpa-mmul/kpa-mmul /kpa/projects/${KPA_PROJECT}
+      - name: Download markdown files
+        uses: actions/download-artifact@v3
+        with:
+          name: markdowns
+          path: /kpa/output/
+      - name: Generate Marp pdf files
+        run: for DOC in $(ls /kpa/output/*.md); do
+               echo "Processing ${DOC}";
+               marp --theme /kpa/projects/${KPA_PROJECT}/common/theme.css --html --pdf --allow-local-files ${DOC};
+             done
+      - name: Upload Marp pdf files
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdfs
+          path: /kpa/output/**.pdf
