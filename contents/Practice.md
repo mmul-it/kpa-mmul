@@ -139,7 +139,7 @@ real-life example of **Knowledge As A Service**.
 
 ## KPA Lab 1
 
-A local modification and document generation.
+A local modification and document generation, very coooool!
 
 ---
 
