@@ -1,6 +1,7 @@
 ---
 
-kpa_project_dir: "projects/mmul"
+# KPA
+kpa_project_dir: "projects/kpa-mmul"
 
 # Pandoc (agenda) section
 pandoc_agenda_template_file: "{{ kpa_project_dir }}/common/mmul.tex"

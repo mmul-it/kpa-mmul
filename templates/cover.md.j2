@@ -1,6 +1,6 @@
 <!-- _backgroundImage: url({{ marp_cover_background_image }}) -->
 <!-- _header: '' -->
-<!-- _footer: '**{{ marp_author }}** | _{{ marp_copyright }}_' -->
+<!-- _footer: '**{{ kpa_author }}** | _{{ kpa_copyright }}_' -->
 
 {% if slide.backcover is defined and slide.backcover | bool%}
 
@@ -13,15 +13,15 @@
 <div class='coverlogo'>
 <div>
 
-![width:100px]({{ marp_cover_logo }})
+![width:100px]({{ kpa_cover_logo }})
 
 </div><div>
 
-<span class="txt-title">{{ marp_title }}</span>
+<span class="txt-title">{{ kpa_title }}</span>
 
 </div></div>
 
-{{ marp_subtitle }}
+{{ kpa_subtitle }}
 
 {% endif %}
 

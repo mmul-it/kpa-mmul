@@ -31,6 +31,7 @@ The `common/settings.yml` contains the general parameters that will define how
 the documents will be produced, overriding the Ansible roles defaults:
 
 ```yaml
+# KPA
 kpa_project_dir: "projects/mmul"
 
 # Pandoc (agenda) section
@@ -54,22 +55,16 @@ This will never change for the project, since contains all the style indications
 
 ## The **KPA** project document / 1
 
-The first part of the `KPA.yml` contains the document composition, with the names
-of the generated files, and information abut the author, copyright and else:
+The first part of the `KPA.yml` contains the document composition, with the
+information about the title, author, copyright and else:
 
 ```yaml
-output_file: "output/KPA"
-pandoc_agenda_output_markdown: "{{ output_file }}.agenda.md"
-pandoc_agenda_output_pdf: "{{ output_file }}.agenda.pdf"
-marp_output_markdown: "{{ output_file }}.md"
-marp_output_pdf: "{{ output_file }}.pdf"
-
-marp_title: "Knowledge **Pods** Approach"
-marp_subtitle: "Share knowlege in a standard, dynamic and open-souce way"
-
-marp_author: 'Raoul Scarazzini'
-marp_copyright: '© 2023 MiaMammaUsaLinux.org'
-marp_cover_logo: "{{ kpa_project_dir }}/images/kpa-logo-80-gray.svg"
+# KPA
+kpa_title: "Knowledge **Pods** Approach"
+kpa_subtitle: "Share knowlege in a standard, dynamic and open-souce way"
+kpa_author: 'Raoul Scarazzini'
+kpa_copyright: '© 2023 MiaMammaUsaLinux.org'
+kpa_cover_logo: "{{ kpa_project_dir }}/images/kpa-logo-80-gray.svg"
 ```
 
 ---
@@ -81,10 +76,9 @@ combine the various **KP**s:
 
 ```yaml
 kpa_contents: "{{ kpa_project_dir }}/contents"
-
-marp_slides:
+kpa_slides:
   - cover: true
-    title: "{{ marp_title }}"
+    title: "{{ kpa_title }}"
     subtitle: "Knowledge Pods Approach"
   - chapter: 'Basics'
     title: 'What is KPA?'
@@ -94,6 +88,22 @@ marp_slides:
     content: "{{ kpa_contents }}/Practice.md"
     ...
     ...
+```
+
+---
+
+## The **KPA** project document / 3
+
+The last part of the `KPA.yml` contains the document the names and paths of the
+generated files:
+
+```yaml
+# Output
+output_file: "output/KPA"
+pandoc_agenda_output_markdown: "{{ output_file }}.agenda.md"
+pandoc_agenda_output_pdf: "{{ output_file }}.agenda.pdf"
+marp_output_markdown: "{{ output_file }}.md"
+marp_output_pdf: "{{ output_file }}.pdf"
 ```
 
 ---
