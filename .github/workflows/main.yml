@@ -9,7 +9,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/mmul-it/kpa
+      image: ghcr.io/mmul-it/kpa:v1.0.0
       options: --user root
     steps:
       - name: Checkout repository
@@ -24,7 +24,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/mmul-it/kpa
+      image: ghcr.io/mmul-it/kpa:v1.0.0
       options: --user root
     needs: lint
     steps:
